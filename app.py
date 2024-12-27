@@ -6,17 +6,19 @@ app = Flask(__name__)
 def home():
     return render_template("index.html")
 
-@app.route("/calcular_imc", methods=["POST"])
+@app.route("/calcular_imc", methods=["GET", "POST"])
 def calcular_imc():
-    data = request.json
-    peso = data.get("peso")
-    altura = data.get("altura")
+    imc = None
+    if request.method == "POST":
+        peso = float(request.form.get("peso"))
+        altura = float(request.form.get("altura"))
 
-    if not peso or not altura:
-        return jsonify({"erro": "Forneça peso e altura"}), 400
+        if not peso or not altura:
+            return render_template("calculadora_imc.html", erro="Forneça peso e altura")
 
-    imc = peso / (altura ** 2)
-    return jsonify({"imc": round(imc, 2)})
+        imc = round(peso / (altura ** 2), 2)
+    
+    return render_template("calculadora_imc.html", imc=imc)
 
 if __name__ == "__main__":
     app.run(debug=True)
