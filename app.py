@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return render_template("index.html")  # Serve a página HTML principal
+    return render_template("index.html")
 
 @app.route("/calcular_imc", methods=["POST"])
 def calcular_imc():
