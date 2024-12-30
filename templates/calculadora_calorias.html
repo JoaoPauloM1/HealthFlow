@@ -46,14 +46,22 @@
 
     <a href="/" class="botao-voltar">Voltar</a>
 
-    {% if taxa_basal is not none %}
+        {% if taxa_basal is not none %}
         <h2>Taxa Metabólica Basal: {{ taxa_basal }} calorias</h2>
     {% endif %}
     {% if calorias_diarias is not none %}
         <h2>Calorias Gastas Diariamente: {{ calorias_diarias }} calorias</h2>
+        
+        <h3>Quantas calorias consumir:</h3>
+        <ul>
+            <li><strong>Para manter o peso:</strong> {{ calorias_diarias }} calorias por dia.</li>
+            <li><strong>Para perder peso:</strong> {{ calorias_perder }} calorias por dia (aproximadamente -500 kcal).</li>
+            <li><strong>Para ganhar peso:</strong> {{ calorias_ganhar }} calorias por dia (aproximadamente +500 kcal).</li>
+        </ul>
     {% endif %}
     {% if erro %}
         <p style="color: red;">{{ erro }}</p>
     {% endif %}
+
 </body>
 </html>
