@@ -24,9 +24,25 @@
     <a href="/" class="botao-voltar">Voltar</a>
 
     {% if imc is not none %}
-        <h2>IMC Calculado: {{ imc }}</h2>
+    <h2>IMC Calculado: {{ imc }}</h2>
+    <h3>Classificação: 
+        {% if imc < 18.5 %}
+            Abaixo do peso
+        {% elif 18.5 <= imc < 24.9 %}
+            Peso normal (Ideal)
+        {% elif 25 <= imc < 29.9 %}
+            Sobrepeso
+        {% elif 30 <= imc < 34.9 %}
+            Obesidade Grau 1
+        {% elif 35 <= imc < 39.9 %}
+            Obesidade Grau 2
+        {% else %}
+            Obesidade Grau 3 (Mórbida)
+        {% endif %}
+    </h3>
     {% elif erro %}
         <p style="color: red;">{{ erro }}</p>
     {% endif %}
+
 </body>
 </html>
