@@ -7,12 +7,12 @@
     <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
-    <header class="titulo">
+    <header>
         <h1>Dicas de Saúde</h1>
     </header>
 
-    <section class="conteudo">
-        <section class="dica-secao">
+    <main class="conteudo">
+        <section>
             <h2>Exercícios Recomendados</h2>
             <ul>
                 {% for dica in exercicios %}
@@ -21,7 +21,7 @@
             </ul>
         </section>
 
-        <section class="dica-secao">
+        <section>
             <h2>Alimentos Ricos em Proteínas</h2>
             <ul>
                 {% for alimento in alimentos_proteinas %}
@@ -30,7 +30,7 @@
             </ul>
         </section>
 
-        <section class="dica-secao">
+        <section>
             <h2>Alimentos Ricos em Carboidratos</h2>
             <ul>
                 {% for alimento in alimentos_carboidratos %}
@@ -39,7 +39,7 @@
             </ul>
         </section>
 
-        <section class="dica-secao">
+        <section>
             <h2>Alimentos com Gorduras Saudáveis</h2>
             <ul>
                 {% for alimento in alimentos_gorduras %}
@@ -47,7 +47,7 @@
                 {% endfor %}
             </ul>
         </section>
-    </section>
+    </main>
 
     <footer>
         <a href="/" class="botao">Voltar</a>

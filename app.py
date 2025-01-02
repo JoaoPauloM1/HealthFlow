@@ -23,6 +23,8 @@ def calcular_imc():
 @app.route("/calcular_calorias", methods=["GET", "POST"])
 def calcular_calorias():
     calorias_diarias = None
+    calorias_ganhar = None
+    calorias_perder = None
     taxa_basal = None
     erro = None
 
