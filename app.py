@@ -60,6 +60,8 @@ def calcular_calorias():
                 return render_template("calculadora_calorias.html", erro=erro)
 
             calorias_diarias = round(taxa_basal * fator)
+            calorias_perder = round(calorias_diarias - 500)
+            calorias_ganhar = round(calorias_diarias + 500)
 
         except ValueError:
             erro = "Insira valores válidos para peso, altura e idade."
@@ -68,6 +70,8 @@ def calcular_calorias():
         "calculadora_calorias.html",
         taxa_basal=taxa_basal,
         calorias_diarias=calorias_diarias,
+        calorias_ganhar=calorias_ganhar,
+        calorias_perder=calorias_perder,
         erro=erro
     )
 
@@ -97,7 +101,7 @@ def calcular_agua():
 
     return render_template("calculadora_agua.html", quantidade_agua=quantidade_agua, erro=erro)
 
-@app.route("/calcular_frequencia", methods=["GET", "POST"])
+@app.route("/calcular_frequencia_cardiaca", methods=["GET", "POST"])
 def calcular_frequencia():
     frequencia_maxima = None
     zona_leve = None

@@ -112,3 +112,21 @@ footer p {
     color: #2e7d32;
     margin: 5px 0;
 }
+
+.dica-secao {
+    margin: 20px 0;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.dica-secao ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.dica-secao h2 {
+    font-size: 1.5rem;
+    color: #4CAF50;
+}
