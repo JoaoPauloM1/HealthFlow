@@ -25,7 +25,7 @@ body {
 }
 
 .text {
-    margin-top: 100px; /* Ajuste para que o conteúdo não sobreponha o título fixo */
+    margin-top: 100px;
     text-align: center;
     font-size: 1.2rem;
     padding: 15px;
@@ -48,7 +48,7 @@ body {
     margin-top: 30px;
     flex-wrap: wrap;
     padding: 20px;
-    flex: 1; /* Garante que o conteúdo ocupe o espaço restante da tela */
+    flex: 1;
 }
 
 .dica-secao {
@@ -57,19 +57,17 @@ body {
     border: 1px solid #ccc;
     border-radius: 5px;
     background-color: #f9f9f9;
-    width: 100%;
-    max-width: 800px;
-    box-sizing: border-box;
-}
-
-.dica-secao h2 {
-    font-size: 1.5rem;
-    color: #4CAF50;
+    box-sizing: border-box; /* Garante que o padding não afete a largura total */
 }
 
 .dica-secao ul {
     list-style-type: disc;
     padding-left: 20px;
+}
+
+.dica-secao h2 {
+    font-size: 1.5rem;
+    color: #4CAF50;
 }
 
 .botoes {
@@ -106,18 +104,25 @@ body {
 }
 
 footer {
-    background-color: #ffffff;
-    color: #4caf50;
+    background-color: #4caf50; /* Cor verde para o rodapé */
+    color: #ffffff;
     text-align: center;
     padding: 15px 0;
     border-top: 3px solid #4caf50;
-    margin-top: 50px;
-    font-size: 1rem;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
     box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
 }
 
 footer p {
     margin: 0;
+}
+
+footer a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
 }
 
 .resultados {
@@ -126,6 +131,7 @@ footer p {
     background-color: #e8f5e9;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid #4caf50; /* Bordas verdes */
 }
 
 .resultados h2 {
@@ -139,7 +145,6 @@ footer p {
     margin: 5px 0;
 }
 
-footer a {
-    text-decoration: none;
-    color: #4caf50;
+footer a:hover {
+    text-decoration: underline;
 }
