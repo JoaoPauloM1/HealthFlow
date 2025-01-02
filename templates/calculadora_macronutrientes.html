@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de Macronutrientes</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header class="titulo">
+        <h1>Controle de Macronutrientes</h1>
+    </header>
+    <section class="text">
+        <p>Descubra como dividir suas calorias diárias entre proteínas, carboidratos e gorduras com base no seu objetivo.</p>
+    </section>
+    <section class="conteudo">
+        <form method="POST">
+            <label for="calorias">Calorias diárias (kcal):</label>
+            <input type="number" id="calorias" name="calorias" step="1" required>
+            <br><br>
+
+            <label for="objetivo">Objetivo:</label>
+            <select id="objetivo" name="objetivo" required>
+                <option value="equilibrada">Dieta Equilibrada (50% C, 30% G, 20% P)</option>
+                <option value="ganho_massa">Ganho de Massa Muscular (40% C, 30% P, 30% G)</option>
+            </select>
+            <br><br>
+
+            <button type="submit" class="botao">Calcular Macronutrientes</button>
+        </form>
+
+        {% if carboidratos is not none and gorduras is not none and proteinas is not none %}
+            <section class="resultados">
+                <h2>Resultados:</h2>
+                <p><strong>Carboidratos:</strong> {{ carboidratos }} g</p>
+                <p><strong>Gorduras:</strong> {{ gorduras }} g</p>
+                <p><strong>Proteínas:</strong> {{ proteinas }} g</p>
+            </section>
+        {% elif erro %}
+            <p style="color: red;">{{ erro }}</p>
+        {% endif %}
+    </section>
+    <footer>
+        <a href="/" class="botao">Voltar</a>
+    </footer>
+</body>
+</html>

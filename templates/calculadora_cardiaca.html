@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Frequência Cardíaca</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header class="titulo">
+        <h1>Calculadora de Frequência Cardíaca Ideal</h1>
+    </header>
+
+    <section class="text">
+        <p>Calcule sua frequência cardíaca máxima e as zonas de treino ideais para seu exercício.</p>
+    </section>
+
+    <section class="conteudo">
+        <form method="POST" class="formulario">
+            <label for="idade">Idade (anos):</label>
+            <input type="number" id="idade" name="idade" min="1" required class="input-text">
+            <br><br>
+
+            <button type="submit" class="botao">Calcular</button>
+        </form>
+
+        {% if frequencia_maxima is not none %}
+            <section class="resultados">
+                <h2>Frequência Cardíaca Máxima: {{ frequencia_maxima }} bpm</h2>
+                <h3>Zonas de Treino:</h3>
+                <ul>
+                    <li>Zona Leve (50-60%): {{ zona_leve[0] | round(1) }} - {{ zona_leve[1] | round(1) }} bpm</li>
+                    <li>Zona Moderada (70-80%): {{ zona_moderada[0] | round(1) }} - {{ zona_moderada[1] | round(1) }} bpm</li>
+                    <li>Zona Intensa (85-90%): {{ zona_intensa[0] | round(1) }} - {{ zona_intensa[1] | round(1) }} bpm</li>
+                </ul>
+            </section>
+        {% endif %}
+
+        {% if erro %}
+            <p class="erro">{{ erro }}</p>
+        {% endif %}
+    </section>
+
+    <footer>
+        <a href="/" class="botao-voltar">Voltar</a>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dicas de Saúde</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header class="titulo">
+        <h1>Dicas de Saúde</h1>
+    </header>
+
+    <section class="conteudo">
+        <section class="dica-secao">
+            <h2>Exercícios Recomendados</h2>
+            <ul>
+                {% for dica in exercicios %}
+                    <li>{{ dica }}</li>
+                {% endfor %}
+            </ul>
+        </section>
+
+        <section class="dica-secao">
+            <h2>Alimentos Ricos em Proteínas</h2>
+            <ul>
+                {% for alimento in alimentos_proteinas %}
+                    <li>{{ alimento }}</li>
+                {% endfor %}
+            </ul>
+        </section>
+
+        <section class="dica-secao">
+            <h2>Alimentos Ricos em Carboidratos</h2>
+            <ul>
+                {% for alimento in alimentos_carboidratos %}
+                    <li>{{ alimento }}</li>
+                {% endfor %}
+            </ul>
+        </section>
+
+        <section class="dica-secao">
+            <h2>Alimentos com Gorduras Saudáveis</h2>
+            <ul>
+                {% for alimento in alimentos_gorduras %}
+                    <li>{{ alimento }}</li>
+                {% endfor %}
+            </ul>
+        </section>
+    </section>
+
+    <footer>
+        <a href="/" class="botao">Voltar</a>
+    </footer>
+</body>
+</html>
