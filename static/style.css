@@ -25,7 +25,7 @@ body {
 }
 
 .text {
-    margin-top: 100px;
+    margin-top: 90px; /* Ajuste para subir um pouco */
     text-align: center;
     font-size: 1.2rem;
     padding: 15px;
@@ -45,9 +45,9 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 30px;
+    margin-top: 20px; /* Ajuste para subir */
     flex-wrap: wrap;
-    padding: 20px;
+    padding: 10px;
     flex: 1;
 }
 
@@ -57,7 +57,7 @@ body {
     border: 1px solid #ccc;
     border-radius: 5px;
     background-color: #f9f9f9;
-    box-sizing: border-box; /* Garante que o padding não afete a largura total */
+    box-sizing: border-box;
 }
 
 .dica-secao ul {
@@ -75,7 +75,8 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 15px;
-    padding: 20px;
+    padding: 10px; /* Reduzi para subir */
+    margin-top: -10px; /* Ajuste para eliminar espaços extras */
 }
 
 .botao {
@@ -104,7 +105,7 @@ body {
 }
 
 footer {
-    background-color: #4caf50; /* Cor verde para o rodapé */
+    background-color: #4caf50;
     color: #ffffff;
     text-align: center;
     padding: 15px 0;
@@ -131,7 +132,7 @@ footer a {
     background-color: #e8f5e9;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border: 1px solid #4caf50; /* Bordas verdes */
+    border: none; /* Remove a borda verde */
 }
 
 .resultados h2 {
