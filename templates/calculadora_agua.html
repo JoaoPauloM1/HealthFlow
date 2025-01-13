@@ -3,43 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora de Consumo de Água</title>
+    <title>Water Intake Calculator</title>
     <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
     <header class="titulo">
-        <h1>Planejador de Consumo de Água</h1>
+        <h1>Water Intake Planner</h1>
     </header>
 
     <section class="text">
-        <p>Calcule a quantidade ideal de água que você deve consumir por dia, considerando seu peso e nível de atividade física.</p>
+        <p>Calculate the ideal amount of water you should consume per day, considering your weight and physical activity level.</p>
     </section>
 
     <section class="conteudo">
         <form method="POST" class="formulario">
-            <label for="peso">Peso (kg):</label>
+            <label for="peso">Weight (kg):</label>
             <input type="number" id="peso" name="peso" step="0.1" required class="input-text">
             <br><br>
 
-            <label for="atividade">Você pratica atividades físicas?</label>
+            <label for="atividade">Do you practice physical activities?</label>
             <select id="atividade" name="atividade" required class="input-select">
-                <option value="não">Não</option>
-                <option value="sim">Sim</option>
+                <option value="não">No</option>
+                <option value="sim">Yes</option>
             </select>
             <br><br>
 
             <div id="horasTreinoContainer" style="display: none;">
-                <label for="horas_treino">Horas de treino por dia:</label>
+                <label for="horas_treino">Training hours per day:</label>
                 <input type="number" id="horas_treino" name="horas_treino" step="0.1" min="0" class="input-text">
                 <br><br>
             </div>
 
-            <button type="submit" class="botao">Calcular</button>
+            <button type="submit" class="botao">Calculate</button>
         </form>
 
         {% if quantidade_agua is not none %}
             <section class="resultados">
-                <h2>Quantidade de água recomendada: {{ quantidade_agua | round(1) }} ml por dia</h2>
+                <h2>The recommended amount of water {{ quantidade_agua | round(1) }} ml per day.</h2>
             </section>
         {% elif erro %}
             <p class="erro">{{ erro }}</p>
@@ -47,7 +47,7 @@
     </section>
 
     <footer>
-        <a href="/" class="botao">Voltar</a>
+        <a href="/" class="botao">Back</a>
     </footer>
 
     <script>

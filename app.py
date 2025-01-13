@@ -1,3 +1,5 @@
+# Note: Variable and functions names are in Portuguese as the project was initially developed this way.
+
 from flask import Flask, render_template, request, jsonify
 
 app = Flask(__name__)
@@ -14,7 +16,7 @@ def calcular_imc():
         altura = float(request.form.get("altura"))
 
         if not peso or not altura:
-            return render_template("calculadora_imc.html", erro="Forneça peso e altura")
+            return render_template("calculadora_imc.html", erro="Provide weight and height")
 
         imc = round(peso / (altura ** 2), 2)
     
@@ -37,7 +39,7 @@ def calcular_calorias():
             atividade = request.form.get("atividade").lower()
 
             if not peso or not altura or not idade or not sexo or not atividade:
-                erro = "Todos os campos são obrigatórios."
+                erro = "All fields are required."
                 return render_template("calculadora_calorias.html", erro=erro)
 
             if sexo == "homem":
@@ -45,7 +47,7 @@ def calcular_calorias():
             elif sexo == "mulher":
                 taxa_basal = round(447.6 + (9.2 * peso) + (3.1 * altura * 100) - (4.3 * idade))
             else:
-                erro = "Sexo inválido. Escolha 'Homem' ou 'Mulher'."
+                erro = "Invalid gender. Please choose 'Male' or 'Female'."
                 return render_template("calculadora_calorias.html", erro=erro)
 
             fatores_atividade = {
@@ -58,7 +60,7 @@ def calcular_calorias():
 
             fator = fatores_atividade.get(atividade)
             if not fator:
-                erro = "Nível de atividade inválido."
+                erro = "Invalid activity level."
                 return render_template("calculadora_calorias.html", erro=erro)
 
             calorias_diarias = round(taxa_basal * fator)
@@ -66,7 +68,7 @@ def calcular_calorias():
             calorias_ganhar = round(calorias_diarias + 500)
 
         except ValueError:
-            erro = "Insira valores válidos para peso, altura e idade."
+            erro = "Please enter valid values for weight, height, and age."
 
     return render_template(
         "calculadora_calorias.html",
@@ -88,7 +90,7 @@ def calcular_agua():
             atividade = request.form.get("atividade").lower()
 
             if not peso or not atividade:
-                erro = "Todos os campos são obrigatórios."
+                erro = "All fields are required."
                 return render_template("calculadora_agua.html", erro=erro)
 
             if atividade == "não":
@@ -97,9 +99,9 @@ def calcular_agua():
                 horas_treino = float(request.form.get("horas_treino", 0))
                 quantidade_agua = (peso * 35) + (horas_treino * 500)
             else:
-                erro = "Opção de atividade inválida. Escolha 'Sim' ou 'Não'."
+                erro = "Invalid activity option. Please choose 'Yes' or 'No'."
         except ValueError:
-            erro = "Insira valores válidos para peso e horas de treino."
+            erro = "Enter valid values for weight and training hours."
 
     return render_template("calculadora_agua.html", quantidade_agua=quantidade_agua, erro=erro)
 
@@ -116,7 +118,7 @@ def calcular_frequencia():
             idade = int(request.form.get("idade"))
 
             if idade <= 0:
-                erro = "A idade deve ser maior que zero."
+                erro = "The age must be greater than zero."
             else:
                 frequencia_maxima = 220 - idade
 
@@ -124,7 +126,7 @@ def calcular_frequencia():
                 zona_moderada = (frequencia_maxima * 0.7, frequencia_maxima * 0.8)
                 zona_intensa = (frequencia_maxima * 0.85, frequencia_maxima * 0.9)
         except ValueError:
-            erro = "Insira uma idade válida."
+            erro = "Please enter a valid age."
 
     return render_template(
         "calculadora_cardiaca.html",
@@ -138,38 +140,38 @@ def calcular_frequencia():
 @app.route("/dicas")
 def dicas():
     exercicios = [
-        "Caminhada ou corrida (cardio leve a moderado).",
-        "Treinamento de força (levantamento de peso).",
-        "Yoga para flexibilidade e relaxamento.",
-        "HIIT (treino intervalado de alta intensidade).",
-        "Natação ou ciclismo para impacto reduzido nas articulações."
+        "Walking or jogging (light to moderate cardio).",
+        "Strength training (weight lifting).",
+        "Yoga for flexibility and relaxation.",
+        "HIIT (High-Intensity Interval Training).",
+        "Swimming or cycling for reduced joint impact."
     ]
 
     alimentos_proteinas = [
-        "Peito de frango.",
-        "Ovos.",
-        "Iogurte grego.",
-        "Tofu.",
-        "Peixes (salmão, atum, sardinha).",
-        "Feijão e lentilha."
+        "Chicken breast."
+        "Eggs."
+        "Greek yogurt."
+        "Tofu."
+        "Fish (salmon, tuna, sardines)."
+        "Beans and lentils."
     ]
 
     alimentos_carboidratos = [
-        "Batata-doce.",
-        "Arroz integral.",
-        "Quinoa.",
-        "Aveia.",
-        "Frutas (banana, maçã, frutas vermelhas).",
-        "Legumes (cenoura, abóbora, beterraba)."
+        "Sweet potato."
+        "Brown rice."
+        "Quinoa."
+        "Oatmeal."
+        "Fruits (banana, apple, berries)."
+        "Vegetables (carrot, pumpkin, beetroot)."
     ]
 
     alimentos_gorduras = [
-        "Abacate.",
-        "Azeite de oliva.",
-        "Nozes e castanhas.",
-        "Sementes de chia e linhaça.",
-        "Peixes ricos em ômega-3 (salmão, cavala).",
-        "Manteiga de amendoim natural."
+        "Avocado."
+        "Olive oil."
+        "Nuts and seeds."
+        "Chia and flax seeds."
+        "Fatty fish (salmon, mackerel)."
+        "Natural peanut butter."
     ]
 
     return render_template(
@@ -191,7 +193,7 @@ def calcular_macronutrientes():
             objetivo = request.form.get("objetivo")
 
             if not calorias or not objetivo:
-                erro = "Forneça as calorias diárias e escolha um objetivo."
+                erro = "Provide your daily calories and choose a goal."
                 return render_template("calculadora_macronutrientes.html", erro=erro)
 
             if objetivo == "equilibrada":
@@ -203,11 +205,11 @@ def calcular_macronutrientes():
                 gorduras = (calorias * 0.30) / 9
                 proteinas = (calorias * 0.30) / 4
             else:
-                erro = "Objetivo inválido."
+                erro = "Invalid object."
                 return render_template("calculadora_macronutrientes.html", erro=erro)
 
         except ValueError:
-            erro = "Por favor, insira valores válidos."
+            erro = "Please, enter valid values."
 
     return render_template(
         "calculadora_macronutrientes.html",

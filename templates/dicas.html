@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dicas de Saúde</title>
+    <title>Health Tips</title>
     <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
     <header>
-        <h1>Dicas de Saúde</h1>
+        <h1>Health Tips</h1>
     </header>
 
     <main class="conteudo-dicas">
         <section>
-            <h2>Exercícios Recomendados</h2>
+            <h2>Recommended Exercises</h2>
             <ul>
                 {% for dica in exercicios %}
                     <li>{{ dica }}</li>
@@ -22,7 +22,7 @@
         </section>
 
         <section>
-            <h2>Alimentos Ricos em Proteínas</h2>
+            <h2>Protein-Rich Foods</h2>
             <ul>
                 {% for alimento in alimentos_proteinas %}
                     <li>{{ alimento }}</li>
@@ -31,7 +31,7 @@
         </section>
 
         <section>
-            <h2>Alimentos Ricos em Carboidratos</h2>
+            <h2>Carbohydrate-Rich Foods</h2>
             <ul>
                 {% for alimento in alimentos_carboidratos %}
                     <li>{{ alimento }}</li>
@@ -40,7 +40,7 @@
         </section>
 
         <section>
-            <h2>Alimentos com Gorduras Saudáveis</h2>
+            <h2>Healthy Fat-Rich Foods</h2>
             <ul>
                 {% for alimento in alimentos_gorduras %}
                     <li>{{ alimento }}</li>
@@ -50,7 +50,7 @@
     </main>
 
     <footer>
-        <a href="/" class="botao">Voltar</a>
+        <a href="/" class="botao">Back</a>
     </footer>
 </body>
 </html>

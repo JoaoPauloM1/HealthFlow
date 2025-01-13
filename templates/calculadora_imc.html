@@ -3,47 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora IMC</title>
+    <title>BMI Calculator</title>
     <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
     <header class="titulo">
-        <h1>Calculadora de IMC</h1>
+        <h1>BMI Calculator</h1>
     </header>
     
     <section class="text">
-        <p>Calcule seu IMC e veja em qual faixa de peso você se encontra.</p>
+        <p>Calculate your BMI and see which weight category you fall into.</p>
     </section>
 
     <section class="conteudo">
         <form method="POST" class="formulario">
-            <label for="peso">Peso (kg):</label>
+            <label for="peso">Weight (kg):</label>
             <input type="text" id="peso" name="peso" required class="input-text">
             <br><br>
 
-            <label for="altura">Altura (m):</label>
+            <label for="altura">Height (m):</label>
             <input type="text" id="altura" name="altura" required class="input-text">
             <br><br>
 
-            <button type="submit" class="botao">Calcular IMC</button>
+            <button type="submit" class="botao">Calculate BMI</button>
         </form>
 
         {% if imc is not none %}
             <section class="resultados">
-                <h2>IMC Calculado: {{ imc }}</h2>
-                <h3>Classificação: 
+                <h2>Calculated BMI: {{ imc }}</h2>
+                <h3>Classification: 
                     {% if imc < 18.5 %}
-                        Abaixo do peso
+                        Underweight
                     {% elif 18.5 <= imc < 24.9 %}
-                        Peso normal (Ideal)
+                        Normal weight (Ideal)
                     {% elif 25 <= imc < 29.9 %}
-                        Sobrepeso
+                        Overweight
                     {% elif 30 <= imc < 34.9 %}
-                        Obesidade Grau 1
+                        Obesity Class 1
                     {% elif 35 <= imc < 39.9 %}
-                        Obesidade Grau 2
+                        Obesity Class 2
                     {% else %}
-                        Obesidade Grau 3 (Mórbida)
+                        Obesity Class 3 (Severe)
                     {% endif %}
                 </h3>
             </section>
@@ -55,7 +55,7 @@
     </section>
 
     <footer>
-        <a href="/" class="botao">Voltar</a>
+        <a href="/" class="botao">Back</a>
     </footer>
 </body>
 </html>
