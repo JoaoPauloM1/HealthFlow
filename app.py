@@ -137,51 +137,6 @@ def calcular_frequencia():
         erro=erro,
     )
 
-@app.route("/dicas")
-def dicas():
-    exercicios = [
-        "Walking or jogging (light to moderate cardio).",
-        "Strength training (weight lifting).",
-        "Yoga for flexibility and relaxation.",
-        "HIIT (High-Intensity Interval Training).",
-        "Swimming or cycling for reduced joint impact."
-    ]
-
-    alimentos_proteinas = [
-        "Chicken breast."
-        "Eggs."
-        "Greek yogurt."
-        "Tofu."
-        "Fish (salmon, tuna, sardines)."
-        "Beans and lentils."
-    ]
-
-    alimentos_carboidratos = [
-        "Sweet potato."
-        "Brown rice."
-        "Quinoa."
-        "Oatmeal."
-        "Fruits (banana, apple, berries)."
-        "Vegetables (carrot, pumpkin, beetroot)."
-    ]
-
-    alimentos_gorduras = [
-        "Avocado."
-        "Olive oil."
-        "Nuts and seeds."
-        "Chia and flax seeds."
-        "Fatty fish (salmon, mackerel)."
-        "Natural peanut butter."
-    ]
-
-    return render_template(
-        "dicas.html",
-        exercicios=exercicios,
-        alimentos_proteinas=alimentos_proteinas,
-        alimentos_carboidratos=alimentos_carboidratos,
-        alimentos_gorduras=alimentos_gorduras
-    )
-
 @app.route("/calcular_macronutrientes", methods=["GET", "POST"])
 def calcular_macronutrientes():
     carboidratos = gorduras = proteinas = None
