@@ -3,35 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ideal Heart Rate</title>
+    <title>Frequência Cardíaca Ideal</title>
     <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
     <header class="titulo">
-        <h1>Ideal Heart Rate Calculator</h1>
+        <h1>Calculadora de Frequência Cardíaca Ideal</h1>
     </header>
 
     <section class="text">
-        <p>Calculate your maximum heart rate and ideal training zones for exercise.</p>
+        <p>Calcule sua frequência cardíaca máxima e as zonas ideais de treinamento para exercício.</p>
     </section>
 
     <section class="conteudo">
         <form method="POST" class="formulario">
-            <label for="idade">Age (years):</label>
+            <label for="idade">Idade (anos):</label>
             <input type="number" id="idade" name="idade" min="1" required class="input-text">
             <br><br>
 
-            <button type="submit" class="botao">Calculate</button>
+            <button type="submit" class="botao">Calcular</button>
         </form>
 
         {% if frequencia_maxima is not none %}
             <section class="resultados">
-                <h2>Maximum Heart Rate: {{ frequencia_maxima }} bpm</h2>
-                <h3>Training Zones:</h3>
+                <h2>Frequência Cardíaca Máxima: {{ frequencia_maxima }} bpm</h2>
+                <h3>Zonas de Treinamento:</h3>
                 <ul>
-                    <li>Light Zone (50-60%): {{ zona_leve[0] | round(1) }} - {{ zona_leve[1] | round(1) }} bpm</li>
-                    <li>Moderate Zone (70-80%): {{ zona_moderada[0] | round(1) }} - {{ zona_moderada[1] | round(1) }} bpm</li>
-                    <li>Intense Zone (85-90%): {{ zona_intensa[0] | round(1) }} - {{ zona_intensa[1] | round(1) }} bpm</li>
+                    <li>Zona Leve (50-60%): {{ zona_leve[0] | round(1) }} - {{ zona_leve[1] | round(1) }} bpm</li>
+                    <li>Zona Moderada (70-80%): {{ zona_moderada[0] | round(1) }} - {{ zona_moderada[1] | round(1) }} bpm</li>
+                    <li>Zona Intensa (85-90%): {{ zona_intensa[0] | round(1) }} - {{ zona_intensa[1] | round(1) }} bpm</li>
                 </ul>
             </section>
         {% endif %}
@@ -42,7 +42,7 @@
     </section>
 
     <footer>
-        <a href="/" class="botao">Back</a>
+        <a href="/" class="botao">Voltar</a>
     </footer>
 </body>
 </html>

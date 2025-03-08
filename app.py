@@ -1,5 +1,3 @@
-# Note: Variable and functions names are in Portuguese as the project was initially developed this way.
-
 from flask import Flask, render_template, request, jsonify
 
 app = Flask(__name__)
