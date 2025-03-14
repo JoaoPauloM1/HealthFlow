@@ -4,6 +4,8 @@
 <p>Este projeto é um site focado em cálculos de saúde online, desenvolvido como parte dos meus estudos em Python, Flask, HTML e CSS. O objetivo foi praticar e aprimorar meus conhecimentos nessas tecnologias, criando uma plataforma funcional e interativa no navegador.</p>
 <p>O site permite que os usuários explorem recursos para o bem-estar geral de maneira dinâmica e interativa.</p>
 
+![Image](https://github.com/user-attachments/assets/b894b7c8-5b76-46c1-b745-dc86c7702376)
+
 ## 🚀 Tecnologias
 <div>
   <img src="https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54">
